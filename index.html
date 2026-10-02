@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Chamados</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<!-- Dentro de <head> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<!-- No início do conteúdo principal, antes de #resumo-chamados -->
+<section class="grafico-card" aria-labelledby="titulo-grafico">
+  <h2 id="titulo-grafico">Chamados por status</h2>
+  <canvas
+    id="grafico-status"
+    role="img"
+    aria-label="Gráfico com a quantidade de chamados abertos, em progresso e fechados"
+  ></canvas>
+</section>
+<body>
+    <header>
+        <h1>Lista de Chamados</h1>
+    </header>
+    <main>
+        <section id="chamados-list">
+            <section id="resumo-chamados" class="resumo-chamados"></section>
+            <section id="lista-chamados" class="lista-chamados"></section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Prioridade</th>
+                        <th>Status</th>
+                        <th>Usuário</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Erro no login</td>
+                        <td>Alta</td>
+                        <td>Aberto</td>
+                        <td>Ana Silva</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Tela branca no app</td>
+                        <td>Crítica</td>
+                        <td>Aberto</td>
+                        <td>Bruno Costa</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Atualizar cadastro</td>
+                        <td>Baixa</td>
+                        <td>Em progresso</td>
+                        <td>Carlos Souza</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Boleto não gerado</td>
+                        <td>Média</td>
+                        <td>Aberto</td>
+                        <td>Daniela Lima</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Botão quebrado</td>
+                        <td>Baixa</td>
+                        <td>Aberto</td>
+                        <td>Eduardo Rocha</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Lentidão na busca</td>
+                        <td>Média</td>
+                        <td>Em progresso</td>
+                        <td>Fernanda Alves</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Recuperar senha</td>
+                        <td>Alta</td>
+                        <td>Aberto</td>
+                        <td>Gabriel Santos</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Erro no Pix</td>
+                        <td>Crítica</td>
+                        <td>Aberto</td>
+                        <td>Amanda Melo</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Mudar foto de perfil</td>
+                        <td>Baixa</td>
+                        <td>Fechado</td>
+                        <td>Igor Ribeiro</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Exportar PDF falhou</td>
+                        <td>Média</td>
+                        <td>Aberto</td>
+                        <td>Juliana Vieira</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Carrinho esvaziando</td>
+                        <td>Alta</td>
+                        <td>Em progresso</td>
+                        <td>Lucas Martins</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Cupom inválido</td>
+                        <td>Média</td>
+                        <td>Aberto</td>
+                        <td>Mariana Dias</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Página 404 no FAQ</td>
+                        <td>Baixa</td>
+                        <td>Aberto</td>
+                        <td>Nicolas Ferreira</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Atraso na entrega</td>
+                        <td>Alta</td>
+                        <td>Aberto</td>
+                        <td>Patricia Gomes</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Email de boas-vindas</td>
+                        <td>Baixa</td>
+                        <td>Fechado</td>
+                        <td>Rodrigo Ramos</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Estorno pendente</td>
+                        <td>Alta</td>
+                        <td>Em progresso</td>
+                        <td>Sabrina Oliveira</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>Alerta de segurança</td>
+                        <td>Crítica</td>
+                        <td>Aberto</td>
+                        <td>Thiago Barbosa</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>Link quebrado no menu</td>
+                        <td>Baixa</td>
+                        <td>Aberto</td>
+                        <td>Vanessa Cunha</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>Nota fiscal sumiu</td>
+                        <td>Média</td>
+                        <td>Aberto</td>
+                        <td>Willian Cardoso</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>Modo escuro travando</td>
+                        <td>Baixa</td>
+                        <td>Em progresso</td>
+                        <td>Yasmim Lopes</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>Erro na API de CEP</td>
+                        <td>Alta</td>
+                        <td>Aberto</td>
+                        <td>Arthur Antunes</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>Notificação duplicada</td>
+                        <td>Baixa</td>
+                        <td>Aberto</td>
+                        <td>Beatriz Mendes</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>Sessão expirando rápido</td>
+                        <td>Média</td>
+                        <td>Em progresso</td>
+                        <td>Caio Nogueira</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>Erro no cartão de crédito</td>
+                        <td>Crítica</td>
+                        <td>Aberto</td>
+                        <td>Diana Prince</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>Traduzir termo em inglês</td>
+                        <td>Baixa</td>
+                        <td>Fechado</td>
+                        <td>Elton John</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>Chat de suporte offline</td>
+                        <td>Alta</td>
+                        <td>Aberto</td>
+                        <td>Fábio Assunção</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>Upload de comprovante</td>
+                        <td>Média</td>
+                        <td>Aberto</td>
+                        <td>Gisele Bündchen</td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>Histórico sumiu</td>
+                        <td>Alta</td>
+                        <td>Em progresso</td>
+                        <td>Heitor Villa</td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>Termos de uso desatualizados</td>
+                        <td>Baixa</td>
+                        <td>Aberto</td>
+                        <td>Isabela Garcia</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>Erro 500 no checkout</td>
+                        <td>Crítica</td>
+                        <td>Aberto</td>
+                        <td>Jorge Ben</td>
+                    </tr>
+                    <tr>
+                        <td>31</td>
+                        <td>Ajustar margem do header</td>
+                        <td>Baixa</td>
+                        <td>Em progresso</td>
+                        <td>Karina Bacchi</td>
+                    </tr>
+                    <tr>
+                        <td>32</td>
+                        <td>Filtro por data quebrado</td>
+                        <td>Média</td>
+                        <td>Aberto</td>
+                        <td>Leonardo Dicaprio</td>
+                    </tr>
+                    <tr>
+                        <td>33</td>
+                        <td>Assinatura não renovada</td>
+                        <td>Alta</td>
+                        <td>Aberto</td>
+                        <td>Marta Vieira</td>
+                    </tr>
+                    <tr>
+                        <td>34</td>
+                        <td>Áudio do vídeo não funciona</td>
+                        <td>Média</td>
+                        <td>Aberto</td>
+                        <td>Neymar Junior</td>
+                    </tr>
+                    <tr>
+                        <td>35</td>
+                        <td>Atualizar política de privacidade</td>
+                        <td>Baixa</td>
+                        <td>Fechado</td>
+                        <td>Otávio Mesquita</td>
+                    </tr>
+                    <tr>
+                        <td>36</td>
+                        <td>Queda do servidor interno</td>
+                        <td>Crítica</td>
+                        <td>Em progresso</td>
+                        <td>Paula Toller</td>
+                    </tr>
+                    <tr>
+                        <td>37</td>
+                        <td>Convite por email falhou</td>
+                        <td>Baixa</td>
+                        <td>Aberto</td>
+                        <td>Quintino Aires</td>
+                    </tr>
+                    <tr>
+                        <td>38</td>
+                        <td>Extrato em branco</td>
+                        <td>Alta</td>
+                        <td>Aberto</td>
+                        <td>Renata Vasconcellos</td>
+                    </tr>
+                    <tr>
+                        <td>39</td>
+                        <td>ícone errado no painel</td>
+                        <td>Baixa</td>
+                        <td>Aberto</td>
+                        <td>Samuel Rosa</td>
+                    </tr>
+                    <tr>
+                        <td>40</td>
+                        <td>Duplicidade de cobrança</td>
+                        <td>Crítica</td>
+                        <td>Aberto</td>
+                        <td>Tais Araújo</td>
+                    </tr>
+                    <tr>
+                        <td>41</td>
+                        <td>Validação de CNPJ</td>
+                        <td>Média</td>
+                        <td>Em progresso</td>
+                        <td>Umberto Eco</td>
+                    </tr>
+                    <tr>
+                        <td>42</td>
+                        <td>Mensagem de erro confusa</td>
+                        <td>Baixa</td>
+                        <td>Aberto</td>
+                        <td>Valéria Valenssa</td>
+                    </tr>
+                    <tr>
+                        <td>43</td>
+                        <td>Problema com fonte negrito</td>
+                        <td>Baixa</td>
+                        <td>Aberto</td>
+                        <td>Wagner Moura</td>
+                    </tr>
+                    <tr>
+                        <td>44</td>
+                        <td>Links de redes sociais fora do ar</td>
+                        <td>Média</td>
+                        <td>Aberto</td>
+                        <td>Xuxa Meneghel</td>
+                    </tr>
+                    <tr>
+                        <td>45</td>
+                        <td>Sem sinal de geolocalização</td>
+                        <td>Alta</td>
+                        <td>Em progresso</td>
+                        <td>Yuri Gagarin</td>
+                    </tr>
+                    <tr>
+                        <td>46</td>
+                        <td>Página recarregando sozinha</td>
+                        <td>Alta</td>
+                        <td>Aberto</td>
+                        <td>Zeca Pagodinho</td>
+                    </tr>
+                    <tr>
+                        <td>47</td>
+                        <td>Gráfico de vendas travado</td>
+                        <td>Média</td>
+                        <td>Aberto</td>
+                        <td>Alinne Moraes</td>
+                    </tr>
+                    <tr>
+                        <td>48</td>
+                        <td>Impossível remover endereço</td>
+                        <td>Média</td>
+                        <td>Em progresso</td>
+                        <td>Beto Jamaica</td>
+                    </tr>
+                    <tr>
+                        <td>49</td>
+                        <td>Vazamento de memória na aba</td>
+                        <td>Crítica</td>
+                        <td>Aberto</td>
+                        <td>Cláudia Raia</td>
+                    </tr>
+                    <tr>
+                        <td>50</td>
+                        <td>Ajustar alinhamento do rodapé</td>
+                        <td>Baixa</td>
+                        <td>Fechado</td>
+                        <td>Dado Dolabella</td>
+                    </tr>
+                    <script src="script.js" defer></script>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
